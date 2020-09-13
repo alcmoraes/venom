@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { HostLayer } from './host.layer';
 export declare class ProfileLayer extends HostLayer {
   page: Page;
@@ -7,20 +7,20 @@ export declare class ProfileLayer extends HostLayer {
    * Change the theme
    * @param string types "dark" or "light"
    */
-  setTheme(type: string): Promise<boolean>;
+  setTheme(type: string): any;
   /**
    * Sets current user profile status
    * @param status
    */
-  setProfileStatus(status: string): Promise<void>;
+  setProfileStatus(status: string): Promise<any>;
   /**
    * Sets the user's current profile photo
    * @param name
    */
-  setProfilePic(data: string): Promise<boolean>;
+  setProfilePic(data: string): Promise<any>;
   /**
    * Sets current user profile name
    * @param name
    */
-  setProfileName(name: string): Promise<void>;
+  setProfileName(name: string): Promise<any>;
 }

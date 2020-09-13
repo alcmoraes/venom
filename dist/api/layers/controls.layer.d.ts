@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { UILayer } from './ui.layer';
 export declare class ControlsLayer extends UILayer {
   constructor(page: Page);
@@ -7,45 +7,45 @@ export declare class ControlsLayer extends UILayer {
    * @param contactId {string} id '000000000000@c.us'
    * @returns boolean
    */
-  unblockContact(contactId: string): Promise<boolean>;
+  unblockContact(contactId: string): Promise<any>;
   /**
    * Block contact
    * @param contactId {string} id '000000000000@c.us'
    * @returns boolean
    */
-  blockContact(contactId: string): Promise<boolean>;
+  blockContact(contactId: string): Promise<any>;
   /**
    * puts the chat as unread
    * @param contactId {string} id '000000000000@c.us'
    * @returns boolean
    */
-  markUnseenMessage(contactId: string): Promise<boolean>;
+  markUnseenMessage(contactId: string): Promise<any>;
   /**
    * Deletes the given chat
    * @param chatId {string} id '000000000000@c.us'
    * @returns boolean
    */
-  deleteChat(chatId: string): Promise<boolean>;
-  /**
-   * Deletes the given chat
-   * @param chatId {string} id '000000000000@c.us'
-   * @param option {boolean} true or false
-   * @returns boolean
-   */
-  archiveChat(chatId: string, option: boolean): Promise<boolean>;
+  deleteChat(chatId: string): Promise<any>;
   /**
    * Deletes the given chat
    * @param chatId {string} id '000000000000@c.us'
    * @param option {boolean} true or false
    * @returns boolean
    */
-  pinChat(chatId: string, option: boolean): Promise<boolean>;
+  archiveChat(chatId: string, option: boolean): Promise<any>;
+  /**
+   * Deletes the given chat
+   * @param chatId {string} id '000000000000@c.us'
+   * @param option {boolean} true or false
+   * @returns boolean
+   */
+  pinChat(chatId: string, option: boolean): Promise<any>;
   /**
    * Deletes all messages of given chat
    * @param chatId
    * @returns boolean
    */
-  clearChat(chatId: string): Promise<void>;
+  clearChat(chatId: string): Promise<any>;
   /**
    * Deletes message of given message id
    * @param chatId The chat id from which to delete the message.

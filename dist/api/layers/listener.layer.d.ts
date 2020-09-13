@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { Ack, Chat, LiveLocation, Message, ParticipantEvent } from '../model';
 import { SocketState } from '../model/enum';
 import { ProfileLayer } from './profile.layer';
@@ -45,11 +45,11 @@ export declare class ListenerLayer extends ProfileLayer {
   onParticipantsChanged(
     groupId: string,
     fn: (participantChangedEvent: ParticipantEvent) => void
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * @event Fires callback with Chat object every time the host phone is added to a group.
    * @param to callback
    * @returns Observable stream of Chats
    */
-  onAddedToGroup(fn: (chat: Chat) => any): Promise<void>;
+  onAddedToGroup(fn: (chat: Chat) => any): Promise<any>;
 }

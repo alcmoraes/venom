@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { ControlsLayer } from './controls.layer';
 export declare class BusinessLayer extends ControlsLayer {
   constructor(page: Page);
@@ -6,7 +6,7 @@ export declare class BusinessLayer extends ControlsLayer {
    * Querys product catalog
    * @param id Buisness profile id ('00000@c.us')
    */
-  getBusinessProfilesProducts(id: string): Promise<void>;
+  getBusinessProfilesProducts(id: string): Promise<any>;
   /**
    * Sends product with product image to given chat id
    * @param to Chat id
@@ -21,5 +21,5 @@ export declare class BusinessLayer extends ControlsLayer {
     caption: string,
     businessId: string,
     productId: string
-  ): Promise<void>;
+  ): Promise<any>;
 }

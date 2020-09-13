@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { GroupLayer } from './group.layer';
 export declare class UILayer extends GroupLayer {
   constructor(page: Page);
@@ -7,17 +7,11 @@ export declare class UILayer extends GroupLayer {
    * Will fire natural workflow events of whatsapp web
    * @param chatId
    */
-  openChat(chatId: string): Promise<boolean>;
+  openChat(chatId: string): Promise<any>;
   /**
    * Opens chat at given message position
    * @param chatId Chat id
    * @param messageId Message id (For example: '06D3AB3D0EEB9D077A3F9A3EFF4DD030')
    */
-  openChatAt(
-    chatId: string,
-    messageId: string
-  ): Promise<{
-    wasVisible: boolean;
-    alignAt: string;
-  }>;
+  openChatAt(chatId: string, messageId: string): Promise<any>;
 }

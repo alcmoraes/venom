@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { ControlsLayer } from './layers/controls.layer';
 import { Message } from './model';
 export declare class Whatsapp extends ControlsLayer {
@@ -10,7 +10,7 @@ export declare class Whatsapp extends ControlsLayer {
    * @param data Message object
    * @returns Decrypted file buffer (null otherwise)
    */
-  downloadFile(data: string): Promise<string | boolean>;
+  downloadFile(data: string): Promise<any>;
   /**
    * Get the puppeteer page instance
    * @returns The Whatsapp page

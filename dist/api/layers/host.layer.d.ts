@@ -1,5 +1,4 @@
-import { Page } from 'puppeteer';
-import { HostDevice } from '../model';
+import { Page } from 'puppeteer-core';
 import { SocketState } from '../model/enum';
 export declare class HostLayer {
   page: Page;
@@ -7,19 +6,19 @@ export declare class HostLayer {
   /**
    * Delete the Service Workers
    */
-  killServiceWorker(): Promise<boolean>;
+  killServiceWorker(): Promise<any>;
   /**
    * Load the service again
    */
-  restartService(): Promise<boolean>;
+  restartService(): Promise<any>;
   /**
    * @returns Current host device details
    */
-  getHostDevice(): Promise<HostDevice>;
+  getHostDevice(): Promise<any>;
   /**
    * Retrieves WA version
    */
-  getWAVersion(): Promise<string>;
+  getWAVersion(): Promise<any>;
   /**
    * Retrieves the connecction state
    */
@@ -27,13 +26,13 @@ export declare class HostLayer {
   /**
    * Retrieves if the phone is online. Please note that this may not be real time.
    */
-  isConnected(): Promise<boolean>;
+  isConnected(): Promise<any>;
   /**
    * Retrieves if the phone is online. Please note that this may not be real time.
    */
-  isLoggedIn(): Promise<boolean>;
+  isLoggedIn(): Promise<any>;
   /**
    * Retrieves Battery Level
    */
-  getBatteryLevel(): Promise<number>;
+  getBatteryLevel(): Promise<any>;
 }

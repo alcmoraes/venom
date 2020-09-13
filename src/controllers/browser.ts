@@ -55,7 +55,7 @@ all copyright reservation for S2 Click, Inc
 */
 import * as ChromeLauncher from 'chrome-launcher';
 import * as path from 'path';
-import { Browser, Page } from 'puppeteer';
+import { Browser, Page } from 'puppeteer-core';
 import puppeteer from 'puppeteer-extra';
 import { CreateConfig } from '../config/create-config';
 import { puppeteerConfig } from '../config/puppeteer.config';
@@ -125,10 +125,9 @@ async function initBrowser(options: CreateConfig, extras = {}) {
   puppeteer.use(StealthPlugin());
 
   const browser = await puppeteer.launch({
-    // headless: true,
     headless: options.headless,
     devtools: options.devtools,
-    //userDataDir: path.join(process.cwd(), session),
+    executablePath: options.executablePath,
     args: options.browserArgs
       ? options.browserArgs
       : [...puppeteerConfig.chroniumArgs],

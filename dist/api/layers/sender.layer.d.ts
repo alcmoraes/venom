@@ -1,4 +1,4 @@
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { ChatState } from '../model/enum';
 import { ListenerLayer } from './listener.layer';
 export declare class SenderLayer extends ListenerLayer {
@@ -10,7 +10,7 @@ export declare class SenderLayer extends ListenerLayer {
    * @param url string A link, for example for youtube. e.g https://www.youtube.com/watch?v=Zi_XLOBDo_Y&list=RDEMe12_MlgO8mGFdeeftZ2nOQ&start_radio=1
    * @param title custom text as the message body, this includes the link or will be attached after the link
    */
-  sendLinkPreview(chatId: string, url: string, title: string): Promise<string>;
+  sendLinkPreview(chatId: string, url: string, title: string): Promise<any>;
   /**
    * Sends a text message to given chat
    * @param to chat id: xxxxx@us.c
@@ -36,7 +36,7 @@ export declare class SenderLayer extends ListenerLayer {
     path: string,
     filename: string,
     caption?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends image message
    * @param to Chat id
@@ -49,7 +49,7 @@ export declare class SenderLayer extends ListenerLayer {
     base64: string,
     filename: string,
     caption?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends message with thumbnail
    * @param thumb
@@ -64,7 +64,7 @@ export declare class SenderLayer extends ListenerLayer {
     title: string,
     description: string,
     chatId: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Replies to given mesage id of given chat id
    * @param to Chat id
@@ -77,7 +77,7 @@ export declare class SenderLayer extends ListenerLayer {
     content: string,
     quotedMsg: string,
     mentioned: string[]
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends file
    * base64 parameter should have mime type already defined
@@ -91,7 +91,7 @@ export declare class SenderLayer extends ListenerLayer {
     base64: string,
     filename: string,
     caption?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends file
    * base64 parameter should have mime type already defined
@@ -105,7 +105,7 @@ export declare class SenderLayer extends ListenerLayer {
     base64: string,
     filename: string,
     caption?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends file from path
    * @param to Chat id
@@ -118,7 +118,7 @@ export declare class SenderLayer extends ListenerLayer {
     path: string,
     filename: string,
     caption?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends a video to given chat as a gif, with caption or not, using base64
    * @param to chat id xxxxx@us.c
@@ -131,7 +131,7 @@ export declare class SenderLayer extends ListenerLayer {
     path: string,
     filename: string,
     caption: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends a video to given chat as a gif, with caption or not, using base64
    * @param to chat id xxxxx@us.c
@@ -144,7 +144,7 @@ export declare class SenderLayer extends ListenerLayer {
     base64: string,
     filename: string,
     caption: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sends contact card to iven chat id
    * @param to Chat id
@@ -167,13 +167,13 @@ export declare class SenderLayer extends ListenerLayer {
    *  @param path image path imageBase64 A valid gif image is required. You can also send via http/https (http://www.website.com/img.gif)
    *  @param to chatId '000000000000@c.us'
    */
-  sendImageAsStickerGif(to: string, path: string): Promise<boolean>;
+  sendImageAsStickerGif(to: string, path: string): Promise<any>;
   /**
    * Generates sticker from given image and sends it (Send Image As Sticker)
    * @param path image path imageBase64 A valid png, jpg and webp image is required. You can also send via http/https (http://www.website.com/img.gif)
    * @param to chatId '000000000000@c.us'
    */
-  sendImageAsSticker(to: string, path: string): Promise<boolean>;
+  sendImageAsSticker(to: string, path: string): Promise<any>;
   /**
    * TODO: Fix message not being delivered
    * Sends location to given chat id
@@ -188,35 +188,31 @@ export declare class SenderLayer extends ListenerLayer {
     longitude: any,
     title?: string,
     subtitle?: string
-  ): Promise<void>;
+  ): Promise<any>;
   /**
    * Sets a chat status to seen. Marks all messages as ack: 3
    * @param chatId chat id: xxxxx@us.c
    */
-  sendSeen(chatId: string): Promise<void>;
+  sendSeen(chatId: string): Promise<any>;
   /**
    * Starts typing ('Typing...' state)
    * @param chatId
    */
-  startTyping(to: string): Promise<void>;
+  startTyping(to: string): Promise<any>;
   /**
    * Stops typing
    * @param to Chat id
    */
-  stopTyping(to: string): Promise<void>;
+  stopTyping(to: string): Promise<any>;
   /**
    * Sends text with tags
    *
    */
-  sendMentioned(
-    to: string,
-    message: string,
-    mentioned: string[]
-  ): Promise<void>;
+  sendMentioned(to: string, message: string, mentioned: string[]): Promise<any>;
   /**
    * Sets the chat state
    * @param chatState
    * @param chatId
    */
-  setChatState(chatId: string, chatState: ChatState): Promise<void>;
+  setChatState(chatId: string, chatState: ChatState): Promise<any>;
 }

@@ -1,12 +1,4 @@
-import { Page } from 'puppeteer';
-import {
-  Chat,
-  Contact,
-  ContactStatus,
-  Message,
-  PartialMessage,
-  WhatsappProfile,
-} from '../model';
+import { Page } from 'puppeteer-core';
 import { SenderLayer } from './sender.layer';
 export declare class RetrieverLayer extends SenderLayer {
   constructor(page: Page);
@@ -14,17 +6,17 @@ export declare class RetrieverLayer extends SenderLayer {
    * Receive the current theme
    * @returns string light or dark
    */
-  getTheme(): Promise<string>;
+  getTheme(): Promise<any>;
   /**
    * Receive all blocked contacts
    * @returns array of [0,1,2,3....]
    */
-  getBlockList(): Promise<Contact[]>;
+  getBlockList(): Promise<any>;
   /**
    * Retrieves all chats
    * @returns array of [Chat]
    */
-  getAllChats(withNewMessageOnly?: boolean): Promise<Chat[]>;
+  getAllChats(withNewMessageOnly?: boolean): Promise<any>;
   /**
    * Checks if a number is a valid WA number
    * @param contactId, you need to include the @c.us at the end.
@@ -35,60 +27,60 @@ export declare class RetrieverLayer extends SenderLayer {
    * Retrieves all chats with messages
    * @returns array of [Chat]
    */
-  getAllChatsWithMessages(withNewMessageOnly?: boolean): Promise<Chat[]>;
+  getAllChatsWithMessages(withNewMessageOnly?: boolean): Promise<any>;
   /**
    * Retrieve all groups
    * @returns array of groups
    */
-  getAllGroups(withNewMessagesOnly?: boolean): Promise<Chat[]>;
+  getAllGroups(withNewMessagesOnly?: boolean): Promise<any>;
   /**
    * Retrieves contact detail object of given contact id
    * @param contactId
    * @returns contact detial as promise
    */
-  getContact(contactId: string): Promise<Contact>;
+  getContact(contactId: string): Promise<any>;
   /**
    * Retrieves all contacts
    * @returns array of [Contact]
    */
-  getAllContacts(): Promise<Contact[]>;
+  getAllContacts(): Promise<any>;
   /**
    * Retrieves chat object of given contact id
    * @param contactId
    * @returns contact detial as promise
    */
-  getChatById(contactId: string): Promise<Chat>;
+  getChatById(contactId: string): Promise<any>;
   /**
    * Retrieves chat object of given contact id
    * @param contactId
    * @returns contact detial as promise
    * @deprecated
    */
-  getChat(contactId: string): Promise<Chat>;
+  getChat(contactId: string): Promise<any>;
   /**
    * Retrieves chat picture
    * @param chatId Chat id
    * @returns url of the chat picture or undefined if there is no picture for the chat.
    */
-  getProfilePicFromServer(chatId: string): Promise<string>;
+  getProfilePicFromServer(chatId: string): Promise<any>;
   /**
    * Load more messages in chat object from server. Use this in a while loop
    * @param contactId
    * @returns contact detial as promise
    * @deprecated
    */
-  loadEarlierMessages(contactId: string): Promise<Message[]>;
+  loadEarlierMessages(contactId: string): Promise<any>;
   /**
    * Retrieves status of given contact
    * @param contactId
    */
-  getStatus(contactId: string): Promise<ContactStatus>;
+  getStatus(contactId: string): Promise<any>;
   /**
    * Checks if a number is a valid whatsapp number
    * @param contactId, you need to include the @c.us at the end.
    * @returns contact detial as promise
    */
-  getNumberProfile(contactId: string): Promise<WhatsappProfile>;
+  getNumberProfile(contactId: string): Promise<any>;
   /**
    * Retrieves all undread Messages
    * @param includeMe
@@ -106,7 +98,7 @@ export declare class RetrieverLayer extends SenderLayer {
    * Retrieves all unread messages (where ack is -1)
    * @returns list of messages
    */
-  getAllUnreadMessages(): Promise<PartialMessage[]>;
+  getAllUnreadMessages(): Promise<any>;
   /**
    * Retrieves all new messages (where isNewMsg is true)
    * @returns List of messages
@@ -125,7 +117,7 @@ export declare class RetrieverLayer extends SenderLayer {
     chatId: string,
     includeMe: boolean,
     includeNotifications: boolean
-  ): Promise<Message[]>;
+  ): Promise<any>;
   /**
    * Loads and Retrieves all Messages in a chat
    * @param chatId, the chat to get the messages from
@@ -137,7 +129,7 @@ export declare class RetrieverLayer extends SenderLayer {
     chatId: string,
     includeMe?: boolean,
     includeNotifications?: boolean
-  ): Promise<Message[]>;
+  ): Promise<any>;
   /**
    * Checks if a CHAT contact is online.
    * @param chatId chat id: xxxxx@c.us

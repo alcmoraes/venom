@@ -343,10 +343,9 @@ function initBrowser(options, extras) {
             puppeteer_extra_1.default.launch(
               __assign(
                 {
-                  // headless: true,
                   headless: options.headless,
                   devtools: options.devtools,
-                  //userDataDir: path.join(process.cwd(), session),
+                  executablePath: options.executablePath,
                   args: options.browserArgs
                     ? options.browserArgs
                     : __spreadArrays(

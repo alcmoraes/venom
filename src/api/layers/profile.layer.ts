@@ -53,7 +53,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNMMNNNMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 all copyright reservation for S2 Click, Inc
 */
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { HostLayer } from './host.layer';
 
 declare module WAPI {
@@ -61,19 +61,19 @@ declare module WAPI {
   const setMyName: (name: string) => void;
   const setProfilePic: (data: string) => Promise<boolean>;
   const setPresence: (to: boolean) => boolean;
-  const setTheme:(theme?: string) => boolean;
+  const setTheme: (theme?: string) => boolean;
 }
 
 export class ProfileLayer extends HostLayer {
   constructor(public page: Page) {
     super(page);
   }
- /**
+  /**
    * Change the theme
    * @param string types "dark" or "light"
    */
   public setTheme(type: string) {
-    return this.page.evaluate( (type) => WAPI.setTheme(type), type);
+    return this.page.evaluate((type) => WAPI.setTheme(type), type);
   }
 
   /*

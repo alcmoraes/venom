@@ -55,7 +55,7 @@ all copyright reservation for S2 Click, Inc
 */
 import { readFileSync, writeFileSync, mkdir } from 'fs';
 import latestVersion from 'latest-version';
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 import { timer } from 'rxjs';
 import { takeUntil, switchMap } from 'rxjs/operators';
 import { Whatsapp } from '../api/whatsapp';
