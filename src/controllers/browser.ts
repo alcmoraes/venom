@@ -127,7 +127,6 @@ async function initBrowser(options: CreateConfig, extras = {}) {
   const browser = await puppeteer.launch({
     headless: options.headless,
     devtools: options.devtools,
-    executablePath: options.executablePath,
     args: options.browserArgs
       ? options.browserArgs
       : [...puppeteerConfig.chroniumArgs],

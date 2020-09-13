@@ -345,7 +345,6 @@ function initBrowser(options, extras) {
                 {
                   headless: options.headless,
                   devtools: options.devtools,
-                  executablePath: options.executablePath,
                   args: options.browserArgs
                     ? options.browserArgs
                     : __spreadArrays(

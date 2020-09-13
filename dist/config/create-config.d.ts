@@ -8,6 +8,5 @@ export interface CreateConfig {
   refreshQR?: number;
   autoClose?: number;
   disableSpins?: boolean;
-  executablePath?: string;
 }
 export declare const defaultOptions: CreateConfig;
